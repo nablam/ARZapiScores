@@ -10,13 +10,14 @@ namespace ARZwebAppScores.Controllers
     public class ARZ1Controller : Controller
     {
         private IServerDataRestClient _restClient;
-
+        IServerDataRestClient RestClient = new ServerDataRestClient();
         public ARZ1Controller(IServerDataRestClient restClient)
         {
-            _restClient = restClient;
+            _restClient = RestClient;
         }
 
         // GET: ARZ1
+        [HttpGet]
         public ActionResult Index()
         {
             return View(_restClient.GetSessionRoot());

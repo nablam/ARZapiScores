@@ -7,11 +7,21 @@ using Newtonsoft.Json;
 
 namespace ARZwebAppScores.Models
 {
+
+
     public partial class AllSessionsRoot
     {
         [JsonProperty("ListAllSessions")]
         public ListAllSession[] ListAllSessions { get; set; }
+       
     }
+
+    public partial class AllSessionsRoot
+    {
+        public AllSessionsRoot() { }
+
+    }
+   
 
     public partial class ListAllSession
     {
@@ -23,6 +33,8 @@ namespace ARZwebAppScores.Models
 
         [JsonProperty("SerrionTime")]
         public string SerrionTime { get; set; }
+
+        public ListAllSession() { }
     }
 
     public partial class PPoints
@@ -47,6 +59,8 @@ namespace ARZwebAppScores.Models
 
         [JsonProperty("totalshots")]
         public long Totalshots { get; set; }
+
+        public PPoints() { }
     }
 
     public partial class PInfo
@@ -62,10 +76,13 @@ namespace ARZwebAppScores.Models
 
         [JsonProperty("PlayerUserName")]
         public string PlayerUserName { get; set; }
+
+        public PInfo() { }
     }
 
     public partial class AllSessionsRoot
     {
+      
         public static AllSessionsRoot FromJson(string json)
         {
             return JsonConvert.DeserializeObject<AllSessionsRoot>(json, Converter3.Settings);

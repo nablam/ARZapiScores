@@ -29,27 +29,27 @@ namespace ARZwebAppScores.Helper
 
 
 
-        static void TryGetHLApi()
-        {
+        //static void TryGetHLApi()
+        //{
 
-            var restClient = new RestClient("http://172.16.0.6/")
-            {
-                Authenticator = new HttpBasicAuthenticator("HL13", "ARZDevs")
-            };
+        //    var restClient = new RestClient("http://172.16.0.6/")
+        //    {
+        //        Authenticator = new HttpBasicAuthenticator("HL13", "ARZDevs")
+        //    };
 
 
-            ///api/filesystem/apps/file?knownfolderid=LocalAppData&filename=ARZAllSessions.txt&packagefullname=ARZpak_0.5.0.0_x86__pzq3xp76mxafg&path=%5C%5CRoamingState
-            // var request = new RestRequest("/api/holographic/os/settings/ipd", Method.GET);
-            var request = new RestRequest("/api/filesystem/apps/file?knownfolderid=LocalAppData&filename=ARZAllSessions.txt&packagefullname=ARZpak_0.5.0.0_x86__pzq3xp76mxafg&path=%5C%5CRoamingState", Method.GET);
+        //    ///api/filesystem/apps/file?knownfolderid=LocalAppData&filename=ARZAllSessions.txt&packagefullname=ARZpak_0.5.0.0_x86__pzq3xp76mxafg&path=%5C%5CRoamingState
+        //    // var request = new RestRequest("/api/holographic/os/settings/ipd", Method.GET);
+        //    var request = new RestRequest("/api/filesystem/apps/file?knownfolderid=LocalAppData&filename=ARZAllSessions.txt&packagefullname=ARZpak_0.5.0.0_x86__pzq3xp76mxafg&path=%5C%5CRoamingState", Method.GET);
 
-            var response = restClient.Execute(request);
-            string AllSessionsStr = response.Content;
-            Console.WriteLine(AllSessionsStr);
+        //    var response = restClient.Execute(request);
+        //    string AllSessionsStr = response.Content;
+        //    Console.WriteLine(AllSessionsStr);
 
-            AllSessionsRoot asr = AllSessionsRoot.FromJson(AllSessionsStr);
+        //    AllSessionsRoot asr = AllSessionsRoot.FromJson(AllSessionsStr);
 
-            Console.WriteLine(asr.ListAllSessions.FirstOrDefault().PInfo.PlayerLastName);
-        }
+        //    Console.WriteLine(asr.ListAllSessions.FirstOrDefault().PInfo.PlayerLastName);
+        //}
 
 
 
@@ -62,7 +62,7 @@ namespace ARZwebAppScores.Helper
 
             var response = _client.Execute(request);
             string AllSessionsStr = response.Content;
-            Console.WriteLine(AllSessionsStr);
+        //    Console.WriteLine(AllSessionsStr);
 
             AllSessionsRoot asr = AllSessionsRoot.FromJson(AllSessionsStr);
 
